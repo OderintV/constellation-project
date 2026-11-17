@@ -128,7 +128,7 @@ def main():
     rows = done.to_dict("records")
     opts = webdriver.ChromeOptions()
     for flag in ["--disable-renderer-backgrounding", "--disable-backgrounding-occluded-windows",
-                 "--disable-background-timer-throttling", "--window-size=750,800",
+                 "--disable-background-timer-throttling", "--window-size=1400,900",
                  "--window-position=760,0"]:
         opts.add_argument(flag)
     driver = webdriver.Chrome(options=opts)
