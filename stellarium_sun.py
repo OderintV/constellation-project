@@ -87,7 +87,7 @@ def read_page(driver):
                 day=day.group(1) if day else "",
                 radec=radec.group(1).strip() if radec else "")
 
-def get_one(driver, obj, dt):
+def _get_once(driver, obj, dt):
     driver.get(make_url(obj, dt))
     end = time.time() + WAIT
     want = f"{dt.hour:02d}:{dt.minute:02d}:00"
@@ -107,6 +107,18 @@ def get_one(driver, obj, dt):
             return r
     return last   # may be unfrozen; main() prints a warning
 
+def get_one(driver, obj, dt, tries=3):
+    for attempt in range(1, tries + 1):
+        r = _get_once(driver, obj, dt)
+        if r:
+            return r
+        try:
+            body = driver.find_element(By.TAG_NAME, "body").text.replace("\n", " | ")[:160]
+        except Exception:
+            body = "(could not read page)"
+        print(f"   attempt {attempt}/{tries} failed for {obj} {dt.date()} - page says: {body}")
+    return None
+
 def main():
     test = len(sys.argv) > 1 and sys.argv[1] == "test"
     days = [date(2026, 1, 10)] if test else [date(2026, 1, 1) + timedelta(d) for d in range(365)]
@@ -114,7 +126,12 @@ def main():
     done = pd.read_csv(OUT) if (os.path.exists(OUT) and not test) else pd.DataFrame(columns=cols)
     seen = set(zip(done["Date"].astype(str), done["Object"]))
     rows = done.to_dict("records")
-    driver = webdriver.Chrome()
+    opts = webdriver.ChromeOptions()
+    for flag in ["--disable-renderer-backgrounding", "--disable-backgrounding-occluded-windows",
+                 "--disable-background-timer-throttling", "--window-size=750,800",
+                 "--window-position=760,0"]:
+        opts.add_argument(flag)
+    driver = webdriver.Chrome(options=opts)
     try:
         for d in days:
             for obj in OBJECTS:
