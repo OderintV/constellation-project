@@ -1,0 +1,25 @@
+Constellation,Star,Month,Days,Days_above_0,Days_above_10,Min_alt,Mean_alt,Max_alt
+Orion,Betelgeuse,Jan,31,31,31,48.0,58.5,66.9
+Orion,Betelgeuse,Feb,28,28,28,62.1,66.6,68.4
+Orion,Betelgeuse,Mar,31,31,31,38.9,50.7,61.5
+Orion,Betelgeuse,Apr,30,30,30,13.3,25.7,38.0
+Orion,Betelgeuse,May,31,16,3,-13.1,-0.3,12.4
+Orion,Betelgeuse,Jun,30,0,0,-36.4,-25.5,-14.0
+Orion,Betelgeuse,Jul,31,0,0,-52.2,-45.7,-37.1
+Orion,Betelgeuse,Aug,31,0,0,-53.6,-52.3,-48.7
+Orion,Betelgeuse,Sep,30,0,0,-48.3,-39.7,-29.9
+Orion,Betelgeuse,Oct,31,0,0,-29.1,-17.2,-4.8
+Orion,Betelgeuse,Nov,30,26,13,-3.7,8.7,21.0
+Orion,Betelgeuse,Dec,31,31,31,21.8,34.6,47.0
+Ursa Major,Dubhe,Jan,31,31,31,14.4,20.6,27.1
+Ursa Major,Dubhe,Feb,28,28,28,27.6,33.9,40.2
+Ursa Major,Dubhe,Mar,31,31,31,40.6,46.9,52.6
+Ursa Major,Dubhe,Apr,30,30,30,52.9,55.9,57.4
+Ursa Major,Dubhe,May,31,31,31,51.1,55.0,57.3
+Ursa Major,Dubhe,Jun,30,30,30,38.5,44.9,50.7
+Ursa Major,Dubhe,Jul,31,31,31,24.2,31.1,38.0
+Ursa Major,Dubhe,Aug,31,31,31,11.6,17.4,23.7
+Ursa Major,Dubhe,Sep,30,30,4,3.5,7.0,11.3
+Ursa Major,Dubhe,Oct,31,31,0,1.0,1.7,3.3
+Ursa Major,Dubhe,Nov,30,30,0,1.1,2.4,4.6
+Ursa Major,Dubhe,Dec,31,31,12,4.8,9.0,13.9
